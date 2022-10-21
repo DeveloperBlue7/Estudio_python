@@ -1,0 +1,5 @@
+--------Terminal de comandos-------
+
+* ls: Se utiliza para ver las carpetas que hay en la ruta
+* ls -l Se utiliza para ver la informacion detallada de los archivos que se encuentran en la ruta (no se puede ver sin son kb o mb)
+* ls -lh: Se utiliza para ver a informacion detallada de los archivos se puede ver el peso de cada archivo en kb o mb
