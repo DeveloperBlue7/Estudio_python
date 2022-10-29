@@ -1,67 +1,96 @@
 import random
 
+def salida():
+    salir = """
+                    ¡¡¡Vuelve Pronto!!!
+
+        "Juego el numero 30" creador: chris-developer
+        """
+    return salir
+
+
 def menu():
     menu = """
-        ¡¡¡Bienvenido Al Juego!!!
+                ¡¡¡Bienvenido Al Juego!!!
 
-             "El Numero 30"
+                     "El Numero 30"
 
-    1. Ver reglas del juego.
-    2. Iniciar Juego.
-    3. Salir
+
+                1. Ver reglas del juego.
+                2. Iniciar Juego.
+                3. Salir
 """
     return menu
 
 
 def menu2():
     menuInicio = """
-        "Inicio Del Juego"
+                    "Inicio Del Juego"
 
-    1. Jugador1 Vs Jugador2.
-    2. Jugador1 Vs Pc.
-    3. volver al Menu.     
+
+                    1. Jugador1 Vs Jugador2.
+                    2. Jugador1 Vs Pc.
+                    3. volver al Menu.     
     """
     return menuInicio
 
 
 def reglas():
     reglas = """
-                    ¡¡¡Reglas del Juego!!!
+                        ¡¡¡Reglas del Juego!!!
 
-    1. Modo de juego (Jugador Vs Jugador o Jugador Vs Pc).
-    2. El Juego escogera aleatoriamente que jugador comenzara.
-    3. El primer jugador que llegue a 30 gana la partida.
-    4. El jugador solo puede digitar un numero de 1 a 3.
-    5. En cada turno el jugador solo podra digitar un numero.
+        1. Modo de juego (Jugador Vs Jugador o Jugador Vs Pc).
+        2. El Juego escogera aleatoriamente que jugador comenzara.
+        3. El primer jugador que llegue a 30 gana la partida.
+        4. El jugador solo puede digitar un numero de 1 a 3.
+        5. En cada turno el jugador solo podra digitar un numero.
     """
     return reglas
 
 
 def inicio(): 
-    opcion = int(input(f"{menu()}\nDigite una Opción: "))
+    print(menu())
+    while True:
+        try: 
+            opcion = int(input(f"Digite una Opción: "))
+            break
+        except:
+            print("¡Error! **Digite una opcion en numeros**\n")
     print("")
     while opcion != 1 and opcion != 2 and opcion != 3:
         print("¡Error! digite una opcion de 1 a 3\n")
         opcion = int(input(f"Digite una Opción: "))
     if opcion == 1:
         print(reglas())
-        paso = int(input("Digite 1 para volver al menu: "))
+        while True:
+            try:
+                paso = int(input("Digite 1 para volver al menu: "))
+                break
+            except:
+                print("¡Error! Digite el numero 1")
         while paso != 1:
+            print("¡Error! Digite el numero 1")
             paso = int(input("Digite 1 para volver al menu: "))
         print(inicio())
         
     elif opcion == 2:
-        dato = int(input(f"{menu2()}\nDigite una opcion: "))
+        while True:
+            try:
+                dato = int(input(f"{menu2()}\nDigite una opcion: "))
+                break
+            except:
+                print("¡Error! **Digite una opcion en numeros**\n")
         if dato == 1:
             print(juego())
         elif dato == 2:
             print(juegoPc())
         else:
-            print(salida())
-    else:
-        print (salida())
-             
-
+            print(inicio())
+            
+            
+    return salida()
+            
+           
 def juego():
     print("")
     print("*Ingrese el nombre de los jugadores*\n")
@@ -73,7 +102,12 @@ def juego():
     contador = 0
     if turno == 1:
         while contador < 30:
-            dato1 = int(input(f"Digite numero {jugador1}: "))
+            while True:
+                try:
+                    dato1 = int(input(f"Digite numero {jugador1}: "))
+                    break
+                except:
+                    print("Digite solo valores numericos")
             while dato1 != 1 and dato1 != 2 and dato1 != 3:
                 print(f"Dato incorecto {jugador1} (Digite un numero del 1 al 3)")
                 dato1 = int(input(f"Digite numero {jugador1}: "))
@@ -82,8 +116,12 @@ def juego():
             if contador == 30:
                 print(f"El ganador es el jugador {jugador1} ")
                 break
-            
-            dato2 = int(input(f"Digite numero {jugador2}: "))
+            while True:
+                try:
+                    dato2 = int(input(f"Digite numero {jugador2}: "))
+                    break
+                except:
+                    print("Digite solo valores numericos")
             while dato2 != 1 and dato2 != 2 and dato2 != 3:
                 print(f"Dato incorecto {jugador2} (Digite un numero del 1 al 3)")
                 dato2 = int(input(f"Digite numero {jugador2}: "))
@@ -94,7 +132,12 @@ def juego():
                 break
     else: 
         while contador < 30:
-            dato2 = int(input(f"Digite numero {jugador2}: "))
+            while True:
+                try:
+                    dato2 = int(input(f"Digite numero {jugador2}: "))
+                    break
+                except:
+                    print("Digite solo valores numericos")
             while dato2 != 1 and dato2 != 2 and dato2 != 3:
                 print(f"Dato incorecto {jugador2} (Digite un numero del 1 al 3)")
                 dato2 = int(input(f"Digite numero {jugador2}: "))
@@ -103,7 +146,12 @@ def juego():
             if contador == 30:
                 print(f"El ganador es el jugador: {jugador2}")
                 break
-            dato1 = int(input(f"Digite numero {jugador1}: "))
+            while True:
+                try:
+                    dato1 = int(input(f"Digite numero {jugador1}: "))
+                    break
+                except:
+                    print("Digite solo valores numericos")
             while dato1 != 1 and dato1 != 2 and dato1 != 3:
                 print(f"Dato incorecto {jugador1} (Digite un numero del 1 al 3)")
                 dato1 = int(input(f"Digite numero {jugador1}: "))
@@ -112,7 +160,7 @@ def juego():
             if contador == 30:
                 print(f"El ganador es el jugador {jugador1}")
                 break
-    return inicio()
+    return salida()
         
 
 def juegoPc():
@@ -126,7 +174,12 @@ def juegoPc():
     contador = 0
     if turno == 1:
         while contador < 30:
-            dato1 = int(input(f"Digite numero {jugador1}: "))
+            while True:
+                try:
+                    dato1 = int(input(f"Digite numero {jugador1}: "))
+                    break
+                except:
+                    print("Digite solo valores numericos")
             while dato1 != 1 and dato1 != 2 and dato1 != 3:
                 print(f"Dato incorecto {jugador1} (Digite un numero del 1 al 3)")
                 dato1 = int(input(f"Digite numero {jugador1}: "))
@@ -149,7 +202,12 @@ def juegoPc():
             if contador >= 30:
                 print(f"El ganador es el jugador: {jugador2}")
                 break
-            dato1 = int(input(f"Digite numero {jugador1}: "))
+            while True:
+                try:     
+                    dato1 = int(input(f"Digite numero {jugador1}: "))
+                    break
+                except:
+                    print("Digite solo valores numericos")
             while dato1 != 1 and dato1 != 2 and dato1 != 3:
                 print(f"Dato incorecto {jugador1} (Digite un numero del 1 al 3)")
                 dato1 = int(input(f"Digite numero {jugador1}: "))
@@ -160,13 +218,6 @@ def juegoPc():
     return inicio()
 
 
-def salida():
-    salir = """
-                    ¡¡¡Vuelve Pronto!!!
-
-        "Juego el numero 30" creador: chris-developer
-        """
-    return salir
 
 if __name__ == '__main__':
     inicio()

@@ -2,4 +2,81 @@
 
 * ls: Se utiliza para ver las carpetas que hay en la ruta
 * ls -l Se utiliza para ver la informacion detallada de los archivos que se encuentran en la ruta (no se puede ver sin son kb o mb)
-* ls -lh: Se utiliza para ver a informacion detallada de los archivos se puede ver el peso de cada archivo en kb o mb
+* ls -lh: Se utiliza para ver a informacion detallada de los archivos se  puede ver el peso de cada archivo en kb o mb
+* ls - lS: Organiza las carpetas por peso de cada una
+* ls -lr: muestra carpetas en orden alfabetico de la ultima a la primera
+* tree: muestra informacion de todos los archivos en forma de arbol
+* mv: mover archivos y cambiar nombre a los archivos
+* rm comando de mucho cuidado para no borrar carpetas o archivos
+* rm -r + carpeta: borra varias carpetas a la vez
+* rm -ri + carpeta: sirve para escoger que archivos borrar de la carpeta
+
+******EXPLORANDO EL CONTENIDO DE NUESTROS ARCHIVOS******
+
+head + archivo: muestra primeras lineas de archivos de texto
+head + archivo + -n: puede escoger cuantas lineas mostrar del archivo 
+tail + archivo: muestra las ultimas 10 lineas del archivo de texto
+tail tambien se utiliza con -n para escoger cuantas lineas ver
+less: detalles mas full del texto se puede buscar palabras
+
+como colocar alias en comd:
+ejemplo(l="ls -lh")
+pedir ayuda para comandos:
+help + comando (comando --help)
+man + comando muestra el manual detallado
+info + comando 
+
+
+Wildcards***
+ls *.formato: se pueden buscar rapido en carpeta
+ls datos*: buscar datos con mas caracteres
+ls dato?: buscar con un solo caracter (sIGNO INTERROGACION = CARACTERES)
+clase: ls [ad]*
+
+**REDIRECCIONES***
+
+ls carpeta > nombre_archivo: envia el nombre de todos los archivos a un formato txt
+ls carpeta >> nombre_archivo: par seguir agregando
+
+chmod
+which se utiliza para busqueda
+find. / -name file buscar archivos file
+find ./ -type d: buscar directorios
+***comando grep**
+encontrar considencias dentro de cualquier 
+ejemplo: grep -i palabra + archivo
+grep -c palabra + archivo: cuenta cuantos hay 
+greep -v palabra + archivo el resto de archivos sin la palabra
+wc + archivo contar en archivo letras palabras y bits
+wc -l + archivo = lineas
+wc -w + archivo = palabras
+wc -c + archivo = bits
+--UTILIDADES DE RED--
+ifconfig= informacion de la RED
+pin = si una pagina esta activa 
+curl = traer un archivo de manera de texto  de una pagina 
+curl + pagina > nomarchivo = se puede guardar lo quek se descargue en un archivo
+wget + pagina = descargar el archivo directo a la pc 
+traceroute = nos dira por todas las pc conectadas a la pagina
+netstat -i = muestra dispositivos de red 
+---COMO COMPRIMIR ARCHIVOS---
+tar + -cvf + nomARCHIVO + CARPETA A COMPRIMIR = comprimir archivo
+tar -xvf + archivo = descomprimir 
+zip -r + archivo + nomdire = otra forma rapida de comprimir
+unzip nomarchivo = descomprimir
+---Manejo de procesos---
+matar procesos visualizarlos filtrarlos
+ps = ver comandos que estan corriendo
+top = comando donde muestra los procesos mas altos 
+kill + pid = matar procesos
+htop = evolucion de top
+---procesos---
+cat > nombre_archivo (ctrl+ d = para / ctrl + z para parar)
+ctrl + z = movemos archivo a background 
+jobs ver archivo detenido
+fg mas el numero de trabajo para llamarlo
+---editores de texto en la terminal---
+1. vi = rditor antiguo
+2. vim =   editor moderno de linux para salir :q enter
+i para empezar a escribir - tecla 
+---Personalizar la terminal de comandos---
