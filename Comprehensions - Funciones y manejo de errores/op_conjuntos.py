@@ -12,6 +12,7 @@ set_c = (set_a | set_b)
 print(set_c)
 
 # INTERSECIÓN ENTRE CONJUNTOS con (.intersection) o (&)
+print("**********************")
 set_d = set_a.intersection(set_b)
 print(set_d)
 set_d = (set_a & set_b)
