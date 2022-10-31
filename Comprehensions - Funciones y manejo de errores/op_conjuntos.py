@@ -19,6 +19,7 @@ set_d = (set_a & set_b)
 print(set_d)
 
 # DIFERENCIA DE ELEMENTOS DE UN CONJUNTO AL OTRO (DIFERENCE) O (-)
+print("**********")
 set_e = set_a.difference(set_b)
 print(set_e)
 set_e = (set_a - set_b)
